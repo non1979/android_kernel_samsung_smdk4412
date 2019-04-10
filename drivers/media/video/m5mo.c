@@ -29,10 +29,6 @@
 #include <linux/videodev2_exynos_camera.h>
 #endif
 
-#ifdef CONFIG_VIDEO_M5MO_WAKELOCK
-#include "../../../kernel/power/power.h"
-#endif
-
 #include <linux/regulator/machine.h>
 
 #include <media/m5mo_platform.h>
@@ -92,10 +88,6 @@
 			}
 
 #define NELEMS(array) (sizeof(array) / sizeof(array[0]))
-
-#ifdef CONFIG_VIDEO_M5MO_WAKELOCK
-static bool m5mo_wakelock_active = false;
-#endif
 
 static const struct m5mo_frmsizeenum preview_frmsizes[] = {
 	{ M5MO_PREVIEW_QCIF,	176,	144,	0x05 },	/* 176 x 144 */
